@@ -15,18 +15,55 @@
         <div class="logo-container">
             <div class="logo">
                 <img src="/WhatsApp_Image_2025-02-05_at_12.25.12_AM-removebg-preview.png" alt="Deep Tour & Travels" />
-                <h1>Deep Tour & Travels</h1>
+                <!-- <h1>Deep Tour & Travels</h1> -->
             </div>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#header">Home</a></li>
+                    <li><a href="www.deeptravels.site">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#enquiry">Enquiry</a></li>
+                    <li><a href="#packages">Packages</a></li>
                     <li><a href="#footer">Contact Us</a></li>
                 </ul>
+                <a href="#enquiry" class="enquiry-btn">Enquiry</a>
             </nav>
         </div>
     </header>
+
+<!-- Enquiry Modal -->
+<div id="enquiryModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Enquiry Form</h2>
+        <form id="enquiryForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="number">Phone Number:</label>
+            <input type="text" id="number" name="number" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="requirements">Requirements:</label>
+            <textarea id="requirements" name="requirements" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+  
+
+
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <br> "Deep Tour & Travels"</h1>
+        <p>Your Journey, Our Priority: Luxury vehicles You Can Rely On</p><br>
+        <a href="#footer" class="cta-btn">Explore Services</a>
+    </div>
+</section>
+
 
     <!-- About Us Section -->
     <section id="about" class="about">
@@ -60,27 +97,27 @@
 
     <!-- Services Section -->
     <section class="services">
-        <h2>Our Services</h2>
+        <h2>Services We Offer</h2>
         <div class="services-container">
             <div class="service-card">
-                <img src="/local-delhi-ncr.jpg" alt="Personalized Tour Guide">
+                <img src="/Images/Our Services.image/local-delhi-ncr.jpg" alt="Personalized Tour Guide">
                 <p>Local Delhi/NCR</p>
             </div>
             <div class="service-card">
-                <img src="/out-of-station.jpg" alt="Comfortable Transport">
+                <img src="/Images/Our Services.image/out-of-station.jpg" alt="Comfortable Transport">
                 <p>Out of station</p>
             </div>
             <div class="service-card">
-                <img src="/fixes-school.jpg" alt="Group Tours">
+                <img src="/Images/Our Services.image/fixes-school.jpg" alt="Group Tours">
                 <p>School/College Buses</p>
             </div>
             <div class="service-card">
-                <img src="/railway-airport.jpg" alt="Group Tours">
+                <img src="/Images/Our Services.image/railway-airport.jpg" alt="Group Tours">
                 <p>Airport & Railway Station</p>
             </div>
             <div class="service-card">
-                <img src="/corporate-services.jpg" alt="Group Tours">
-                <p>Corporate Clients</p>
+                <img src="/Images/Our Services.image/corporate-services.jpg" alt="Group Tours">
+                <p>Cabs for Corporate Clients</p>
             </div>
         </div>
     </section>
@@ -88,106 +125,95 @@
     <!-- Assurance Section -->
     <section class="assurance">
         <h2>Our AIM</h2>
-        <p>"At Deep Tour & Travels, your journey is our highest priority. We promise to deliver not just a trip, but an unforgettable experience — seamless, luxurious, and free from any worries. Our dedicated team goes above and beyond to ensure every detail is taken care of with the utmost professionalism. With our unwavering commitment to quality and service, we offer a 100% satisfaction guarantee, so you can travel with complete peace of mind, knowing your adventure will exceed every expectation."</p>
+        <p>"At Deep Tour & Travels, your hassle-free journey is our highest priority. We promise to deliver not just a trip, but an unforgettable experience — seamless, luxurious, and free from any worries. Our dedicated team goes above and beyond to ensure every detail is taken care of with the utmost professionalism. With our unwavering commitment to quality and service, we offer a 100% satisfaction guarantee, so you can travel with complete peace of mind, knowing your adventure will exceed every expectation."</p>
     </section>
 
     <!-- Tour Photos Section -->
-    <section class="tour-photos">
+    <section id="packages"  class="tour-photos">
         <h2>Explore Our Tour Packages locations</h2>
         <div class="photo-gallery">
             <div class="gallery-card">
-                <img src="/Packages/himachal.png" alt="Beach Package">
+                <img src="/Images/Packages.image/himachal.png" alt="Beach Package">
                 <p>Himachal</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/kashmir.jpg" alt="Adventure Tour">
+                <img src="/Images/Packages.image/kashmir.jpg" alt="Adventure Tour">
                 <p>Kashmir</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/Uttarakhand.jpg" alt="City Tour">
+                <img src="/Images/Packages.image/Uttarakhand.jpg" alt="City Tour">
                 <p>Uttarakhand</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/Rajasthan.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/Rajasthan.jpg" alt="Luxury Getaway">
                 <p>Rajsthan</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/agra.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/agra.jpg" alt="Luxury Getaway">
                 <p>Agra</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/mathura.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/mathura.jpg" alt="Luxury Getaway">
                 <p>Mathura</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/mata-vaishno-devi.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/mata-vaishno-devi.jpg" alt="Luxury Getaway">
                 <p>Mata Vaishno Devi</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/chardham-yatra.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/chardham-yatra.jpg" alt="Luxury Getaway">
                 <p>Char Dham Yatra</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/banaras.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/banaras.jpg" alt="Luxury Getaway">
                 <p>Banaras</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/leh-and-ladakh.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/leh-and-ladakh.jpg" alt="Luxury Getaway">
                 <p>Leh-Ladakh</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/Haridwar-Rishikesh.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/Haridwar-Rishikesh.jpg" alt="Luxury Getaway">
                 <p>Haridwar & Rishikesh</p>
             </div>
             <div class="gallery-card">
-                <img src="/Packages/ayodhya.jpg" alt="Luxury Getaway">
+                <img src="/Images/Packages.image/ayodhya.jpg" alt="Luxury Getaway">
                 <p>Ayodhya</p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Customer Testimonials</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-slide">
-                <p>"Best travel experience ever! Would highly recommend."</p>
-                <h4>- John Doe</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"Amazing service, great tours, and fantastic memories."</p>
-                <h4>- Jane Smith</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"Comfortable, professional, and the best guides. A must book!"</p>
-                <h4>- Mark Lee</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"Best journey for the little experience ever! Would highly recommend."</p>
-                <h4>- John Lee</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"No one can do this ever! Would highly recommend."</p>
-                <h4>- Lee Doe</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"No one can do this ever! Would highly recommend."</p>
-                <h4>- Lee Doe</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"No one can do this ever! Would highly recommend."</p>
-                <h4>- Lee Doe</h4>
-            </div>
-            <div class="testimonial-slide">
-                <p>"No one can do this ever! Would highly recommend."</p>
-                <h4>- Lee Doe</h4>
+<section class="testimonials">
+    <h2>Testimonials</h2>
+    <p>What our customers are saying</p>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <p>"STS services were excellent. The trip was very memorable. I recommend their services!"</p>
+            <div class="author">
+                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T8.jpg" alt="Rahul Kush">
+                <span>Rahul Kush</span>
             </div>
         </div>
-        <div class="testimonial-buttons">
-            <button id="prev" class="testimonial-btn">❮</button>
-            <button id="next" class="testimonial-btn">❯</button>
+        <div class="testimonial">
+            <p>"Excellent way of receiving. Good customer support. You can relax as they are experts in tour planning."</p>
+            <div class="author">
+                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T2.jpg" alt="Nagarjuna S.V.E">
+                <span>Nagarjuna S.V.E</span>
+            </div>
         </div>
-    </section>
+        <div class="testimonial">
+            <p>"Excellent service and well-educated, responsible drivers. Thanks for the support!"</p>
+            <div class="author">
+                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T1.jpg" alt="Chetan Anand">
+                <span>Chetan Anand</span>
+            </div>
+        </div>
+    </div>
+    <button id="prev">←</button>
+    <button id="next">→</button>
+</section>
+
 
     <!-- Footer Section -->
     <footer id="footer" class="footer">
@@ -233,7 +259,7 @@
     </footer>
 
     <div class="copyright">
-        <p>&copy; 2025 Deep Tour & Travels. All Rights Reserved.</p>
+        <center><span><p>&copy; 2022 Deep Tour & Travels. All Rights Reserved.</p></span></center>
     </div>
 
 </body>
