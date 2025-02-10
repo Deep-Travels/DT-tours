@@ -10,7 +10,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 body {
     background-color: #f4f7fc;
     color: #333;
@@ -20,8 +19,9 @@ body {
 /* Header Section */
 .header {
     background-color: #3a3d98;
-    padding: 10px 0;
+    padding: 1px 0;
     color: white;
+    height: 100px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -30,12 +30,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 5px px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 40px;
+    height: 100px;
     margin-right: 10px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 70px;
 }
 
 .navbar ul {
@@ -54,6 +69,145 @@ body {
 
 .navbar a:hover {
     color: #ff6f91;
+}
+
+/* Enquiry Button */
+.enquiry-btn {
+    background-color: #ff6f91;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    position: absolute;
+    right: 20px;
+    border: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.enquiry-btn:hover {
+    background-color: #e55b76;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: move;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styling */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/Images/WhatsApp\ Image\ 2025-02-10\ at\ 10.15.53\ PM\ \(1\).jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #ff6f91;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e55b76;
 }
 
 /* About Us Section */
@@ -85,15 +239,15 @@ body {
 .assurance h2 {
     font-size: 2rem;
     color: #3a3d98;
-    margin-bottom: 20px; /* Add bottom margin for spacing */
+    margin-bottom: 20px;
 }
 
 .assurance p {
     font-size: 1.125rem;
     line-height: 1.6;
     color: #666;
-    max-width: 800px; /* Control the text width */
-    margin: 0 auto; /* Ensure it's centered */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Stats Section */
@@ -147,8 +301,8 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: nowrap; /* Prevents wrapping, ensures a single row */
-    overflow-x: auto; /* Adds horizontal scroll if the cards exceed the screen width */
+    flex-wrap: nowrap;
+    overflow-x: auto;
     padding: 0 20px;
 }
 
@@ -157,7 +311,7 @@ body {
     background-color: #f8f9fb;
     padding: 25px;
     border-radius: 12px;
-    width: calc(100% / 5 - 20px); /* 5 cards per row, adjust accordingly */
+    width: calc(100% / 5 - 20px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -199,7 +353,7 @@ body {
 
 .gallery-card {
     text-align: center;
-    width: calc(25% - 20px); /* 3 images per row */
+    width: calc(25% - 20px);
 }
 
 .gallery-card img {
@@ -214,71 +368,83 @@ body {
 
 /* Testimonials Section */
 .testimonials {
-    padding: 60px 20px;
+    background: white;
+    padding: 50px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #f9f9f9;
 }
 
 .testimonials h2 {
     font-size: 2rem;
     color: #3a3d98;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.testimonials p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 .testimonial-container {
     display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    flex-wrap: nowrap;
     overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    position: relative;
 }
 
-.testimonial-slide {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    width: 30%; /* Adjust width as per your design */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+.testimonial {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
-.testimonial-slide p {
-    font-size: 1.125rem;
-    color: #555;
+.testimonial p {
+    font-size: 1.1rem;
+    color: #444;
     font-style: italic;
+    margin-bottom: 15px;
 }
 
-.testimonial-slide h4 {
-    margin-top: 15px;
-    font-size: 1.25rem;
-    color: #3a3d98;
-}
-
-.testimonial-buttons {
+.author {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    margin-top: 10px;
+}
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author span {
+    font-weight: bold;
+    color: #3a3d98;
+    font-size: 1rem;
+}
+
+/* Testimonial Buttons */
+button {
     margin-top: 20px;
-}
-
-.testimonial-btn {
-    background-color: #3a3d98;
-    color: white;
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-.testimonial-btn:hover {
-    background-color: #ff6f91;
-}
-
-.testimonial-btn:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
+button:hover {
+    background: #0056b3;
 }
 
 /* Footer Section */
@@ -315,13 +481,13 @@ body {
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
     .service-card {
-        width: calc(100% / 4 - 20px); /* 4 cards per row on tablets */
+        width: calc(100% / 4 - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .service-card {
-        width: calc(100% / 3 - 20px); /* 3 cards per row on mobile */
+        width: calc(100% / 3 - 20px);
     }
 
     .photo-gallery {
@@ -335,5 +501,37 @@ body {
     .footer-links {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+    .stat-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .gallery-card {
+        width: 100%;
     }
 }
