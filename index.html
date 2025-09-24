@@ -6,20 +6,528 @@
     <meta name="description" content="Deep Tour & Travels - Your Journey, Our Passion. Explore exotic destinations with us!">
     <meta name="keywords" content="tour packages, travel agency, vacation packages, adventure tours, destination tours, holiday packages">
     <title>Deep Tour & Travels</title>
-    <link rel="icon" href="/Images/favicon.png" sizes="32x32">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <!-- Using a placeholder for favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/3a3d98/FFFFFF?text=D" sizes="32x32">
+    
+    <!-- Tiny Slider 2 for Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #333;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #3a3d98;
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #ff6f91;
+        }
+
+        .enquiry-btn {
+            background-color: #ff6f91;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            margin-left: 25px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .enquiry-btn:hover {
+            background-color: #e55b76;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+        }
+        
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://placehold.co/1200x800/333333/FFFFFF?text= scenic+view');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 100px; /* Offset for fixed header */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: #ff6f91;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #e55b76;
+        }
+
+        /* Common Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            color: #3a3d98;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About & Assurance */
+        #about, .assurance {
+            background-color: #ffffff;
+        }
+        
+        .assurance h2 {
+            margin-bottom: 20px;
+        }
+        
+        .assurance p {
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: #ffffff;
+        }
+        .stat-card {
+            background-color: #f8f9fb;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card h3 {
+            font-size: 2.25rem;
+            color: #ff6f91;
+            margin-bottom: 10px;
+        }
+        .stat-card p {
+            font-size: 1rem;
+            color: #777;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Services & Tour Photos Section */
+        .services, .tour-photos {
+            background-color: #f9f9f9;
+        }
+        .services-container, .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card, .gallery-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover, .gallery-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card img, .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .service-card p, .gallery-card p {
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .service-card { width: calc(100% / 5 - 20px); min-width: 200px; }
+        .gallery-card { width: calc(100% / 4 - 20px); min-width: 250px; }
+
+
+        /* Testimonials Section */
+        .testimonials {
+            background: white;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonials > p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial {
+            padding: 20px;
+            background: #f8f9fb;
+            border-radius: 10px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .testimonial > p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .author span {
+            font-weight: bold;
+            color: #3a3d98;
+            font-size: 1.1rem;
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3a3d98;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .carousel-btn:hover {
+            background: #ff6f91;
+        }
+        /* Disable Tiny Slider's default hidden attribute */
+        .carousel-btn[disabled] {
+            display: flex !important;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #prev { left: 15px; }
+        #next { right: 15px; }
+        .tns-nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .tns-nav button {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 50%;
+            margin: 0 5px;
+            padding: 0;
+            transition: background-color 0.3s;
+        }
+        .tns-nav button.tns-nav-active {
+            background-color: #3a3d98;
+        }
+
+
+        /* Footer Section */
+        .footer {
+            background-color: #3a3d98;
+            color: white;
+            padding: 50px 20px 30px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .footer-links div {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-links h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #ff6f91;
+        }
+        .footer-links ul {
+            list-style-type: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #5a5db8;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .service-card { width: calc(100% / 3 - 20px); }
+            .gallery-card { width: calc(100% / 3 - 20px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+
+            .hamburger {
+                display: block;
+            }
+            .navbar {
+                position: absolute;
+                top: 100px;
+                left: -100%;
+                width: 100%;
+                background-color: #3a3d98;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: left 0.3s ease-in-out;
+            }
+            .navbar.active {
+                left: 0;
+            }
+            .navbar ul {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                width: 100%;
+            }
+            .navbar li { margin-bottom: 10px; }
+            .enquiry-btn { margin: 20px 0 0 0; }
+            
+            .service-card, .gallery-card {
+                 width: calc(50% - 15px);
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+             .footer-links div {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section { padding: 40px 15px; }
+            .hero { margin-top: 80px; }
+            .header { padding: 5px 15px; }
+            .logo img { height: 70px; }
+            .navbar { top: 80px; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .stat-card { width: 100%; }
+            .service-card, .gallery-card {
+                 width: 100%;
+            }
+            .testimonials { padding: 50px 5px; }
+            #prev { left: 5px; }
+            #next { right: 5px; }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header Section -->
-    <header id="header"  class="header">
+    <header id="header" class="header">
         <div class="logo-container">
             <div class="logo">
-                <img src="/WhatsApp_Image_2025-02-05_at_12.25.12_AM-removebg-preview.png" alt="Deep Tour & Travels" />
-                <!-- <h1>Deep Tour & Travels</h1> -->
+                <img src="https://placehold.co/200x80/ffffff/3a3d98?text=Deep+Tours" alt="Deep Tour & Travels Logo" />
             </div>
-            <nav class="navbar">
+            <nav class="navbar" id="navbar">
                 <ul>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -28,194 +536,131 @@
                 </ul>
                 <a href="#enquiry" class="enquiry-btn">Enquiry</a>
             </nav>
+             <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </header>
 
-<!-- Enquiry Modal -->
-<div id="enquiryModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Enquiry Form</h2>
-        <form id="enquiryForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="number">Phone Number:</label>
-            <input type="text" id="number" name="number" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="requirements">Requirements:</label>
-            <textarea id="requirements" name="requirements" rows="4" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Enquiry Modal -->
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enquiry Form</h2>
+            <form id="enquiryForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="number">Phone Number:</label>
+                <input type="tel" id="number" name="number" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="requirements">Requirements:</label>
+                <textarea id="requirements" name="requirements" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
-
-  
-
 
     <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Welcome to <br> "Deep Tour & Travels"</h1>
-        <p>Your Journey, Our Priority: Luxury vehicles You Can Rely On</p><br>
-        <a href="#footer" class="cta-btn">Explore Services</a>
-    </div>
-</section>
-
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to <br> "Deep Tour & Travels"</h1>
+            <p>Your Journey, Our Priority: Luxury Vehicles You Can Rely On</p><br>
+            <a href="#footer" class="cta-btn">Explore Services</a>
+        </div>
+    </section>
 
     <!-- About Us Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>At Deep Tour & Travels, we understand that travel is an art, and every journey should be a masterpiece. Our company is built on a foundation of trust, creativity, and luxury. We specialize in curating exclusive, high-end travel experiences that cater to your every need and desire. Whether it’s a private tour, a bespoke adventure, or a serene escape to some of the world’s most sought-after destinations, we create unparalleled journeys that reflect your unique taste and style. Our team of expert planners and passionate guides ensures that every detail is carefully crafted, giving you peace of mind and the confidence that your trip will exceed your expectations. With Deep Tour & Travels, indulge in the luxury of travel, where every experience is as extraordinary as you are.</p>
+        <p>At Deep Tour & Travels, we understand that travel is an art, and every journey should be a masterpiece. Our company is built on a foundation of trust, creativity, and luxury. We specialize in curating exclusive, high-end travel experiences that cater to your every need and desire. Whether it’s a private tour, a bespoke adventure, or a serene escape to some of the world’s most sought-after destinations, we create unparalleled journeys that reflect your unique taste and style.</p>
     </section>
 
     <!-- Statistics Section -->
     <section class="stats">
-        <div class="stat-card">
-            <h3>12000+</h3>
-            <p>Happy Clients</p>
-        </div>
-        <div class="stat-card">
-            <h3>30+</h3>
-            <p>Trusted Drivers</p>
-        </div>
-        <div class="stat-card">
-            <h3>50+</h3>
-            <p>Corporate Clients</p>
-        </div>
-        <div class="stat-card">
-            <h3>1800+</h3>
-            <p>Reviews</p>
-        </div>
-        <div class="stat-card">
-            <h3>16000+</h3>
-            <p>Rides</p>
-        </div>
+        <div class="stat-card"><h3>12000+</h3><p>Happy Clients</p></div>
+        <div class="stat-card"><h3>30+</h3><p>Trusted Drivers</p></div>
+        <div class="stat-card"><h3>50+</h3><p>Corporate Clients</p></div>
+        <div class="stat-card"><h3>1800+</h3><p>Reviews</p></div>
+        <div class="stat-card"><h3>16000+</h3><p>Rides</p></div>
     </section>
 
     <!-- Services Section -->
     <section class="services">
         <h2>Services We Offer</h2>
         <div class="services-container">
-            <div class="service-card">
-                <img src="/Images/Our Services.image/local-delhi-ncr.jpg" alt="Personalized Tour Guide">
-                <p>Local Delhi/NCR</p>
-            </div>
-            <div class="service-card">
-                <img src="/Images/Our Services.image/out-of-station.jpg" alt="Comfortable Transport">
-                <p>Out of station</p>
-            </div>
-            <div class="service-card">
-                <img src="/Images/Our Services.image/fixes-school.jpg" alt="Group Tours">
-                <p>School/College Buses</p>
-            </div>
-            <div class="service-card">
-                <img src="/Images/Our Services.image/railway-airport.jpg" alt="Group Tours">
-                <p>Airport & Railway Station</p>
-            </div>
-            <div class="service-card">
-                <img src="/Images/Our Services.image/corporate-services.jpg" alt="Group Tours">
-                <p>Cabs for Corporate Clients</p>
-            </div>
+            <div class="service-card"><img src="https://placehold.co/400x300/EFEFEF/3a3d98?text=Delhi/NCR" alt="Local Delhi/NCR"><p>Local Delhi/NCR</p></div>
+            <div class="service-card"><img src="https://placehold.co/400x300/EFEFEF/3a3d98?text=Outstation" alt="Out of station"><p>Out of station</p></div>
+            <div class="service-card"><img src="https://placehold.co/400x300/EFEFEF/3a3d98?text=School+Bus" alt="School/College Buses"><p>School/College Buses</p></div>
+            <div class="service-card"><img src="https://placehold.co/400x300/EFEFEF/3a3d98?text=Airport+Transfer" alt="Airport & Railway Station"><p>Airport & Railway Station</p></div>
+            <div class="service-card"><img src="https://placehold.co/400x300/EFEFEF/3a3d98?text=Corporate" alt="Cabs for Corporate Clients"><p>Cabs for Corporate Clients</p></div>
         </div>
     </section>
 
     <!-- Assurance Section -->
     <section class="assurance">
         <h2>Our AIM</h2>
-        <p>"At Deep Tour & Travels, your hassle-free journey is our highest priority. We promise to deliver not just a trip, but an unforgettable experience — seamless, luxurious, and free from any worries. Our dedicated team goes above and beyond to ensure every detail is taken care of with the utmost professionalism. With our unwavering commitment to quality and service, we offer a 100% satisfaction guarantee, so you can travel with complete peace of mind, knowing your adventure will exceed every expectation."</p>
+        <p>"At Deep Tour & Travels, your hassle-free journey is our highest priority. We promise to deliver not just a trip, but an unforgettable experience — seamless, luxurious, and free from any worries. With our unwavering commitment to quality and service, we offer a 100% satisfaction guarantee, so you can travel with complete peace of mind, knowing your adventure will exceed every expectation."</p>
     </section>
 
-    <!-- Tour Photos Section -->
-    <section id="packages"  class="tour-photos">
-        <h2>Explore Our Tour Packages locations</h2>
+    <!-- Tour Packages Section -->
+    <section id="packages" class="tour-photos">
+        <h2>Explore Our Tour Packages</h2>
         <div class="photo-gallery">
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/himachal.png" alt="Beach Package">
-                <p>Himachal</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/kashmir.jpg" alt="Adventure Tour">
-                <p>Kashmir</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/Uttarakhand.jpg" alt="City Tour">
-                <p>Uttarakhand</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/Rajasthan.jpg" alt="Luxury Getaway">
-                <p>Rajsthan</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/agra.jpg" alt="Luxury Getaway">
-                <p>Agra</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/mathura.jpg" alt="Luxury Getaway">
-                <p>Mathura</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/mata-vaishno-devi.jpg" alt="Luxury Getaway">
-                <p>Mata Vaishno Devi</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/chardham-yatra.jpg" alt="Luxury Getaway">
-                <p>Char Dham Yatra</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/banaras.jpg" alt="Luxury Getaway">
-                <p>Banaras</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/leh-and-ladakh.jpg" alt="Luxury Getaway">
-                <p>Leh-Ladakh</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/Haridwar-Rishikesh.jpg" alt="Luxury Getaway">
-                <p>Haridwar & Rishikesh</p>
-            </div>
-            <div class="gallery-card">
-                <img src="/Images/Packages.image/ayodhya.jpg" alt="Luxury Getaway">
-                <p>Ayodhya</p>
-            </div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Himachal" alt="Himachal Package"><p>Himachal</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Kashmir" alt="Kashmir Tour"><p>Kashmir</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Uttarakhand" alt="Uttarakhand Tour"><p>Uttarakhand</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Rajasthan" alt="Rajasthan Getaway"><p>Rajasthan</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Agra" alt="Agra Getaway"><p>Agra</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Mathura" alt="Mathura Getaway"><p>Mathura</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Mata+Vaishno+Devi" alt="Mata Vaishno Devi"><p>Mata Vaishno Devi</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Char+Dham" alt="Char Dham Yatra"><p>Char Dham Yatra</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Banaras" alt="Banaras Getaway"><p>Banaras</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Leh+Ladakh" alt="Leh-Ladakh Getaway"><p>Leh-Ladakh</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Haridwar+Rishikesh" alt="Haridwar & Rishikesh Getaway"><p>Haridwar & Rishikesh</p></div>
+            <div class="gallery-card"><img src="https://placehold.co/400x300/CCCCCC/FFF?text=Ayodhya" alt="Ayodhya Getaway"><p>Ayodhya</p></div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-<section class="testimonials">
-    <h2>Testimonials</h2>
-    <p>What our customers are saying</p>
-    <div class="testimonial-container">
-        <div class="testimonial">
-            <p>"STS services were excellent. The trip was very memorable. I recommend their services!"</p>
-            <div class="author">
-                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T8.jpg" alt="Rahul Kush">
-                <span>Rahul Kush</span>
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <p>What our customers are saying</p>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"The services were excellent. The trip was very memorable. I highly recommend their services to everyone looking for a hassle-free journey!"</p>
+                <div class="author">
+                    <img src="https://placehold.co/100x100/AACCFF/333?text=RK" alt="Rahul Kush">
+                    <span>Rahul Kush</span>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Excellent way of receiving and great customer support. You can truly relax as they are experts in tour planning and execution."</p>
+                <div class="author">
+                    <img src="https://placehold.co/100x100/FFCCAA/333?text=NS" alt="Nagarjuna S.V.E">
+                    <span>Nagarjuna S.V.E</span>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Outstanding service with well-educated and responsible drivers. A huge thanks for the incredible support throughout our trip!"</p>
+                <div class="author">
+                    <img src="https://placehold.co/100x100/CCFFAA/333?text=CA" alt="Chetan Anand">
+                    <span>Chetan Anand</span>
+                </div>
+            </div>
+             <div class="testimonial">
+                <p>"A truly five-star experience from start to finish. The attention to detail was impeccable. Will definitely be booking with Deep Tour & Travels again."</p>
+                <div class="author">
+                    <img src="https://placehold.co/100x100/FFDDAA/333?text=SP" alt="Priya Sharma">
+                    <span>Priya Sharma</span>
+                </div>
             </div>
         </div>
-        <div class="testimonial">
-            <p>"Excellent way of receiving. Good customer support. You can relax as they are experts in tour planning."</p>
-            <div class="author">
-                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T2.jpg" alt="Nagarjuna S.V.E">
-                <span>Nagarjuna S.V.E</span>
-            </div>
-        </div>
-        <div class="testimonial">
-            <p>"Excellent service and well-educated, responsible drivers. Thanks for the support!"</p>
-            <div class="author">
-                <img src="https://sehgaltransport.com/wp-content/uploads/2024/09/T1.jpg" alt="Chetan Anand">
-                <span>Chetan Anand</span>
-            </div>
-        </div>
-    </div>
-    <button id="prev">←</button>
-    <button id="next">→</button>
-</section>
-
+        <button id="prev" class="carousel-btn">&larr;</button>
+        <button id="next" class="carousel-btn">&rarr;</button>
+    </section>
 
     <!-- Footer Section -->
     <footer id="footer" class="footer">
@@ -226,7 +671,7 @@
                     <li>+91 8936947924</li>
                     <li>info@deeptravels.site</li>
                     <li>deeptravels0001@gmail.com</li>
-                    <li>A - Square Mall, Sector - 73, Noida - 201305, Uttar Pradesh</li>
+                    <li>A - Square Mall, Sector - 73, Noida, Uttar Pradesh</li>
                 </ul>
             </div>
             <div class="services-list">
@@ -235,34 +680,122 @@
                     <li>Personalized Tours</li>
                     <li>Luxury Transport</li>
                     <li>Guided Group Tours</li>
-                    <li>Hire Local Taxi</li>
-                    <li>Hire Outstation Taxi</li>
-                    <li>Hire Cars for Events and Functions</li>
-                    <li>Hire Tempo Traveller</li>
-                    <li>School/College Transport</li>
+                    <li>Local & Outstation Taxi</li>
+                    <li>Tempo Traveller Hire</li>
                     <li>Corporate Cab Services</li>
                 </ul>
             </div>
             <div class="packages-list">
                 <h3>Our Packages</h3>
                 <ul>
-                    <li>Mahakumbh Packages</li>
                     <li>Rishikesh Packages</li>
                     <li>Nainital Packages</li>
-                    <li>Vrindavan Packages</li>
-                    <li>Char Dham Yatra Packages</li>
+                    <li>Char Dham Yatra</li>
                     <li>Jaipur Packages</li>
                     <li>Manali Packages</li>
-                    <li>Mata Vaishno Devi Packages</li>
-                    <li>Char Dham Yatra Packages</li>
+                    <li>Mata Vaishno Devi</li>
                 </ul>
             </div>
         </div>
+        <div class="copyright">
+            <p>&copy; 2024 Deep Tour & Travels. All Rights Reserved.</p>
+        </div>
     </footer>
+    
+    <!-- Tiny Slider 2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
-    <div class="copyright">
-        <center><span><p>&copy; 2022 Deep Tour & Travels. All Rights Reserved.</p></span></center>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Testimonial Carousel with Tiny Slider ---
+            if (document.querySelector('.testimonial-container')) {
+                var slider = tns({
+                    container: '.testimonial-container',
+                    items: 1,
+                    slideBy: 'page',
+                    autoplay: true,
+                    autoplayButtonOutput: false,
+                    mouseDrag: true,
+                    prevButton: "#prev",
+                    nextButton: "#next",
+                    nav: true,
+                    responsive: {
+                        768: {
+                            items: 2,
+                            gutter: 20
+                        },
+                        1024: {
+                            items: 3,
+                            gutter: 20
+                        }
+                    }
+                });
+            }
 
+            // --- Hamburger Menu for Mobile ---
+            const hamburger = document.getElementById('hamburger');
+            const navbar = document.getElementById('navbar');
+            hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+            
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.navbar a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('active')) {
+                        navbar.classList.remove('active');
+                    }
+                });
+            });
+
+            // --- Modal Handling for Enquiry ---
+            const modal = document.getElementById("enquiryModal");
+            const enquiryBtn = document.querySelector(".enquiry-btn");
+            const closeBtn = document.querySelector(".close");
+
+            enquiryBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                modal.style.display = "flex";
+            });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // --- Form Submission ---
+            document.getElementById("enquiryForm").addEventListener('submit', function (event) {
+                event.preventDefault();
+                modal.style.display = "none";
+                this.reset();
+                
+                // Show a temporary success message
+                const successMessage = document.createElement("div");
+                successMessage.innerHTML = "<p>Request Submitted Successfully! ✓</p>";
+                Object.assign(successMessage.style, {
+                    position: "fixed",
+                    top: "20px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "#28a745",
+                    color: "white",
+                    padding: "15px 30px",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    zIndex: "3000",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.2)"
+                });
+                document.body.appendChild(successMessage);
+                setTimeout(() => document.body.removeChild(successMessage), 3000);
+            });
+        });
+    </script>
 </body>
 </html>
+
