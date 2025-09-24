@@ -176,7 +176,7 @@
             background-image: url('/Images/WhatsApp Image 2025-02-10 at 10.15.53 PM (1).jpeg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: calc(100vh - 100px); /* Adjusted for header height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -560,7 +560,10 @@
         
         @media (max-width: 480px) {
             section { padding: 40px 15px; }
-            .hero { margin-top: 80px; }
+            .hero { 
+                margin-top: 80px; 
+                height: calc(100vh - 80px); /* Adjusted for smaller header */
+            }
             .header { padding: 5px 15px; }
             .logo img { height: 70px; }
             .navbar { top: 80px; }
@@ -850,5 +853,4 @@
     </script>
 </body>
 </html>
-
 
