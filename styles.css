@@ -30,7 +30,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px px;
+    padding: 5px px; /* NOTE: This '5px px' might be an error. Did you mean '5px 0' or similar? */
     width: 100%;
 }
 
@@ -493,13 +493,13 @@ button:hover {
         text-align: center;
         gap: 20px;
     }
-    
+
     /* Fix: Allow gallery to stay in a grid instead of stacking 1 by 1 */
     .photo-gallery {
-        flex-direction: row; 
+        flex-direction: row;
         flex-wrap: wrap;
     }
-    
+
     /* Tablet Service Card Width */
     .service-card {
         width: calc(100% / 3 - 20px);
@@ -508,7 +508,7 @@ button:hover {
 
 /* Mobile Devices (Phones - Fixes applied here) */
 @media (max-width: 576px) {
-    
+
     /* --- 1. HEADER & HERO (Keeps your original logo/font sizes) --- */
     .logo img {
         height: 60px; /* Kept your smaller logo size */
@@ -539,19 +539,19 @@ button:hover {
         width: calc(50% - 10px); /* Forces 2 photos per row */
         margin-bottom: 15px;
     }
-    
+
     /* --- 4. SERVICES: 3 on Top, 2 on Bottom (My Layout Fix) --- */
     .services-container {
-        flex-wrap: wrap;     
-        overflow-x: visible; 
-        justify-content: center; 
-        gap: 5px;            
+        flex-wrap: wrap;
+        overflow-x: visible;
+        justify-content: center;
+        gap: 5px;
         padding: 0;
     }
 
     .service-card {
         /* Math: (100% width - 10px for gaps) divided by 3 */
-        width: calc((100% - 10px) / 3); 
+        width: calc((100% - 10px) / 3);
         margin-bottom: 10px;
         padding: 10px 2px;
     }
