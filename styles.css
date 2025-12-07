@@ -549,7 +549,7 @@ section > p {
         margin-top: 80px;
         height: calc(100vh - 80px); /* Adjusted for smaller header */
     }
-    .header { padding: 5px 10px; }
+    .header { padding: 3px 15px; }
     .logo img { height: 70px; }
     .navbar { top: 80px; }
     .hero-content h1 { font-size: 2rem; }
@@ -565,4 +565,5 @@ section > p {
     #prev { left: 5px; }
     #next { right: 5px; }
 }
+
 
