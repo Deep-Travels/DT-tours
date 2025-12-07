@@ -478,60 +478,92 @@ button:hover {
     font-size: 14px;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-    .service-card {
-        width: calc(100% / 4 - 20px);
-    }
-}
+/* --- Media Queries for Responsiveness --- */
 
+/* Tablets (iPad) & Mobile Landscape */
 @media (max-width: 768px) {
-    .service-card {
-        width: calc(100% / 3 - 20px);
-    }
-
-    .photo-gallery {
-        flex-direction: column;
-    }
-
+    /* Stack Testimonials vertically */
     .testimonial-container {
         flex-direction: column;
     }
 
+    /* Center Footer links */
     .footer-links {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+    }
+    
+    /* Fix: Allow gallery to stay in a grid instead of stacking 1 by 1 */
+    .photo-gallery {
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+    
+    /* Tablet Service Card Width */
+    .service-card {
+        width: calc(100% / 3 - 20px);
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile Devices (Phones - Fixes applied here) */
+@media (max-width: 576px) {
+    
+    /* --- 1. HEADER & HERO (Keeps your original logo/font sizes) --- */
     .logo img {
-        height: 60px;
+        height: 60px; /* Kept your smaller logo size */
     }
-
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
-
     .cta-btn {
-        padding: 12px 25px;
+        padding: 12px 25px; /* Kept your smaller button padding */
         font-size: 1.1rem;
     }
 
-    .testimonial-container {
-        flex-direction: column;
-    }
-
+    /* --- 2. STATISTICS: Keep 2 per row (My Layout Fix) --- */
     .stat-card {
-        width: 100%;
-        margin-bottom: 20px;
+        width: calc(50% - 10px); /* Forces 2 cards per row */
+        margin-bottom: 15px;
+        padding: 15px 5px;
+    }
+    .stat-card h3 {
+        font-size: 1.5rem;
     }
 
+    /* --- 3. TOUR PHOTOS: 2 per row (My Layout Fix) --- */
     .gallery-card {
-        width: 100%;
+        width: calc(50% - 10px); /* Forces 2 photos per row */
+        margin-bottom: 15px;
+    }
+    
+    /* --- 4. SERVICES: 3 on Top, 2 on Bottom (My Layout Fix) --- */
+    .services-container {
+        flex-wrap: wrap;     
+        overflow-x: visible; 
+        justify-content: center; 
+        gap: 5px;            
+        padding: 0;
+    }
+
+    .service-card {
+        /* Math: (100% width - 10px for gaps) divided by 3 */
+        width: calc((100% - 10px) / 3); 
+        margin-bottom: 10px;
+        padding: 10px 2px;
+    }
+
+    .service-card img {
+        height: 50px; /* Smaller icons to fit nicely */
+        object-fit: cover;
+        margin-bottom: 5px;
+    }
+
+    .service-card p {
+        font-size: 0.7rem; /* Smaller text so it fits */
+        line-height: 1.2;
     }
 }
